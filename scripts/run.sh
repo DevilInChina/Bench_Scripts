@@ -1,1 +1,2 @@
-./main $1
+#!/bin/bash
+./main \'$1\'
