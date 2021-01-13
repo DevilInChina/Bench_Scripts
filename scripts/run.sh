@@ -1,2 +1,4 @@
 #!/bin/bash
-./main \'$1\'
+BINPATH=/home/kouushou/Github/spmv/bin
+cd ${BINPATH};
+./spmv $1 8 100 ;
