@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -rf findMtx.sh
 rm -rf $3
-echo \#!/bin/bash > findMtx.sh
+
 find $1 -name *.mtx >> MtxPath
 
 cat MtxPath | while read line ;
@@ -16,17 +16,22 @@ do
   IFS=$IFS_OLD
 	echo $FileName\'$line >> $3
 done
-NameSet=$(cat $2)
+
+
+
+NameSet=$(sed 's/$/&.mtx/g' $2)
+
 cat $3 |sort > temp
 rm -rf $3
+echo $NameSet > sss
 lastTitle=''
 
 cat temp | while read line;
 do
   cur_title=$(echo $line | awk -F"[']" '{print $1}')
-  #echo $cur_title
-  Cur_name=$(echo $line | awk -F"[.]" '{print $1}')
 
+  Cur_name=$cur_title
+  #echo $Cur_name
   if [ "$cur_title" = "$lastTitle" ]
   then
     continue
