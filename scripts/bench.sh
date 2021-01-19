@@ -1,23 +1,12 @@
-./run.sh '/home/kouushou/matrix/webbase-1M/webbase-1M.mtx'
-./run.sh '/home/kouushou/matrix/Si41Ge41H72.mtx'
-./run.sh '/home/kouushou/matrix/mc2depi.mtx'
-./run.sh '/home/kouushou/matrix/cop20k_A.mtx'
-./run.sh '/home/kouushou/matrix/ssdb.mtx'
-./run.sh '/home/kouushou/matrix/webbase-1M.mtx'
-./run.sh '/home/kouushou/matrix/ASIC_680k.mtx'
-./run.sh '/home/kouushou/matrix/cant.mtx'
-./run.sh '/home/kouushou/matrix/eu-2005.mtx'
-./run.sh '/home/kouushou/matrix/ins2.mtx'
-./run.sh '/home/kouushou/matrix/dc2.mtx'
-./run.sh '/home/kouushou/matrix/shipsec1.mtx'
-./run.sh '/home/kouushou/matrix/add20.mtx'
-./run.sh '/home/kouushou/matrix/conf6_0-8x8-80.mtx'
-./run.sh '/home/kouushou/matrix/in-2004.mtx'
-./run.sh '/home/kouushou/matrix/Ga41As41H72/Ga41As41H72.mtx'
-./run.sh '/home/kouushou/matrix/mip1/mip1.mtx'
-./run.sh '/home/kouushou/matrix/conf6_0-8x8-80/conf6_0-8x8-80.mtx'
-./run.sh '/home/kouushou/matrix/consph.mtx'
-./run.sh '/home/kouushou/matrix/circuit5M/circuit5M.mtx'
-./run.sh '/home/kouushou/matrix/rma10.mtx'
-./run.sh '/home/kouushou/matrix/mac_econ_fwd500.mtx'
-./run.sh '/home/kouushou/matrix/FullChip/FullChip.mtx'
+#!/bin/bash
+cat MtxPath | while read line ;
+do
+  IFS_OLD=$IFS
+  IFS=/
+  FileName=''
+  for i in $line;do
+    FileName=$i
+    done
+  IFS=$IFS_OLD
+  echo $FileName
+done

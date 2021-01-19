@@ -1,4 +1,4 @@
 #!/bin/bash
 BINPATH=/home/kouushou/Github/spmv/bin
 cd ${BINPATH};
-./spmv $1 8 100 ;
+./spmv $1 8 8 ;
