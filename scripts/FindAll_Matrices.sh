@@ -23,7 +23,7 @@ lastTitle=''
 cat temp | while read line;
 do
   cur_title=$(echo $line | awk -F"[']" '{print $1}')
-  echo $cur_title
+  #echo $cur_title
   if [ "$cur_title" = "$lastTitle" ]
   then
     continue
