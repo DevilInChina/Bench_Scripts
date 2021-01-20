@@ -38,7 +38,7 @@ do
   else
     if [[ $NameSet == *$Cur_name* ]]
     then
-      echo "./run.sh" \'$(echo $line | awk -F"[']" '{print $2}')\' >> $3
+      echo "./run.sh" \'$(echo $line | awk -F"[']" '{print $2}')\' \$1>> $3
     fi
   fi
   lastTitle=$cur_title
@@ -46,4 +46,5 @@ done
 rm -rf temp
 rm -rf findMtx.sh
 rm -rf MtxPath
+
 chmod 777 $3
