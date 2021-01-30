@@ -1,11 +1,11 @@
 #!/bin/bash
+BINPATH=/home/kouushou/Github/spmv/bin
 cur_path=$(pwd)
 last=$(cat lastMtx.info)
 echo $1 > lastMtx.info
 if [[ "$1" > "$last" ]];
 then
   echo $1 "in running"
-  BINPATH=/home/kouushou/Github/spmv/bin
   cd ${BINPATH};
   rm -rf run_sh_temp
   ./spmv $1 8 8 > run_sh_temp
