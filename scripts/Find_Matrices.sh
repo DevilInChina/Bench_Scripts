@@ -43,8 +43,11 @@ do
   fi
   lastTitle=$cur_title
 done
+cat $3 | sort > temp
+mv temp $3
 rm -rf temp
 rm -rf findMtx.sh
 rm -rf MtxPath
- echo "rm -rf lastMtx.info" >> $3
+
+echo "rm -rf lastMtx.info" >> $3
 chmod 777 $3
